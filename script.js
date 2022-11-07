@@ -2,45 +2,51 @@ const eleContainer = document.querySelector('.container');
 
 const arrProfiles = [
     {
+        img: 'wayne-barnett-founder-ceo.jpg',
         name: 'Wayne Barnett',
         occupation: 'Founder & CEO',
-        img: 'wayne-barnett-founder-ceo.jpg',
     },
     {
+        img: 'angela-caroll-chief-editor.jpg',
         name: 'Angela Caroll',
         occupation: 'Chief Editor',
-        img: 'angela-caroll-chief-editor.jpg',
     },
     {
+        img: 'walter-gordon-office-manager.jpg',
         name: 'Walter Gordon',
         occupation: 'Office Manager',
-        img: 'walter-gordon-office-manager.jpg',
     },
     {
+        img: 'angela-lopez-social-media-manager.jpg',
         name: 'Angela Lopez',
         occupation: 'Social Media Manager',
-        img: 'angela-lopez-social-media-manager.jpg',
     },
     {
+        img: 'scott-estrada-developer.jpg',
         name: 'Scott Estrada',
         occupation: 'Developer',
-        img: 'scott-estrada-developer.jpg',
     },
     {
+        img: 'barbara-ramos-graphic-designer.jpg',
         name: 'Barbara Ramons',
         occupation: 'Graphic Designer',
-        img: 'barbara-ramos-graphic-designer.jpg',
     },
 ];
 
 for (let i = 0; i < arrProfiles.length; i++) {
+    const eleCard = document.createElement('div');
+    eleCard.classList.add('card');
+    eleContainer.appendChild(eleCard);
     for (let key in arrProfiles[i]) {
         if (key == 'img') {
             let eleImg = `<img src="img/${arrProfiles[i][key]}">`;
-            eleContainer.innerHTML += eleImg;
+            eleCard.innerHTML += eleImg;
+        }else if (key == 'name') {
+            let eleString = `<p class="name">${arrProfiles[i][key]}</p>`
+            eleCard.innerHTML += eleString;
         }else {
-            let eleString = `<p>${key}: ${arrProfiles[i][key]}</p>`
-            eleContainer.innerHTML += eleString
+            let eleString = `<p class="job">${arrProfiles[i][key]}</p>`
+            eleCard.innerHTML += eleString
         }
     }
 };
