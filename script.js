@@ -1,3 +1,5 @@
+const eleContainer = document.querySelector('.container');
+
 const arrProfiles = [
     {
         name: 'Wayne Barnett',
@@ -33,10 +35,13 @@ const arrProfiles = [
 
 for (let i = 0; i < arrProfiles.length; i++) {
     for (let key in arrProfiles[i]) {
-        const eleString = document.createElement('p');
-        eleString.innerHTML = `${key}: ${arrProfiles[i][key]}`;
-        document.body.appendChild(eleString);
+        if (key == 'img') {
+            let eleImg = `<img src="img/${arrProfiles[i][key]}">`;
+            eleContainer.innerHTML += eleImg;
+        }else {
+            let eleString = `<p>${key}: ${arrProfiles[i][key]}</p>`
+            eleContainer.innerHTML += eleString
+        }
     }
-    
 };
 
