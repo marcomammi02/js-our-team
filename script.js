@@ -33,7 +33,10 @@ const arrProfiles = [
 
 for (let i = 0; i < arrProfiles.length; i++) {
     for (let key in arrProfiles[i]) {
-        console.log(`${key}: ${arrProfiles[i][key]} `);
+        const eleString = document.createElement('p');
+        eleString.innerHTML = `${key}: ${arrProfiles[i][key]}`;
+        document.body.appendChild(eleString);
     }
+    
 };
 
