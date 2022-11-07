@@ -31,3 +31,9 @@ const arrProfiles = [
     },
 ];
 
+for (let i = 0; i < arrProfiles.length; i++) {
+    for (let key in arrProfiles[i]) {
+        console.log(`${key}: ${arrProfiles[i][key]} `);
+    }
+};
+
